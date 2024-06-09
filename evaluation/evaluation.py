@@ -21,9 +21,9 @@ class ClassifierEvaluation:
         classifiers = {
             "KNN": KNeighborsClassifier(n_neighbors=5),
             # "SVM": SVC(),
-            "Random Forest": RandomForestClassifier(),
+            #"Random Forest": RandomForestClassifier(),
             # "Decision Tree": DecisionTreeClassifier(),
-            # "Logistic Regression": LogisticRegression(max_iter=3000, solver='saga', C=1.0)
+            "Logistic Regression": LogisticRegression(max_iter=1000, solver='saga', C=1.0, warm_start=True, tol=1e-4)
         }
 
         accuracies = {}
