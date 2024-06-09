@@ -1,0 +1,15 @@
+IMG_WIDTH: 30
+IMG_HEIGHT: 30
+BATCH_SIZE: 128
+EPOCHS: 5
+SEED: 42
+DATASET: 'GTSRB'
+train_data_dir: '../datasets/gtsrb/train'
+validation_data_dir: '../datasets/gtsrb/val'
+k: 5
+num_iterations: 10
+learning_rate: 0.001
+regularization: 0.01
+batch_size: 128
+num_models: 5
+mse_threshold: 0.1
