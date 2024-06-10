@@ -31,7 +31,7 @@ class ModelTrainer:
             output_types=(tf.float32, tf.float32),
             output_shapes=([None, self.config['IMG_WIDTH'], self.config['IMG_HEIGHT'], 3], [None, 43])
         ).repeat()
-
+        
         training_start_time = time.time()
         history = self.model.fit(
             train_dataset,

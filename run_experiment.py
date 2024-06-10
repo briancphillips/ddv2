@@ -7,7 +7,7 @@ base_config = {
     'IMG_WIDTH': 30,
     'IMG_HEIGHT': 30,
     'BATCH_SIZE': 128,
-    'EPOCHS': 2,
+    'EPOCHS': 20,
     'SEED': 42,
     'DATASET': 'GTSRB',
     'train_data_dir': './datasets/gtsrb/train',
@@ -16,33 +16,33 @@ base_config = {
     'num_iterations': 10,
     'learning_rate': 0.001,
     'regularization': 0.01,
-    'batch_size': 128,
+    'batch_size': 64,
     'num_models': 5,
-    'mse_threshold': 0.1,
+    'mse_threshold': 0.05,
 }
 
 configurations = [
     # PGD attack with poisoned evaluation
-    {**base_config, 'attack_type': 'pgd', 'evaluation': 'Poisoned', 'BATCH_SIZE': 16, 'source_class': 3, 'target_class': 7},
-    # PGD attack with clean evaluation
     {**base_config, 'attack_type': 'pgd', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': 3, 'target_class': 7},
+    # PGD attack with clean evaluation
+    {**base_config, 'attack_type': 'pgd', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': 3, 'target_class': 7},
     # # Label flipping attack with poisoned evaluation
-    {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Poisoned', 'BATCH_SIZE': 64, 'source_class': 2, 'target_class': 8},
-    # # Label flipping attack with clean evaluation
-    {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Clean', 'BATCH_SIZE': 64, 'source_class': 2, 'target_class': 8},
-    # # Gradient ascent attack with poisoned evaluation
-    {**base_config, 'attack_type': 'gradient_ascent', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
-    # # Gradient ascent attack with clean evaluation
-    {**base_config, 'attack_type': 'gradient_ascent', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
+    # {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Poisoned', 'BATCH_SIZE': 64, 'source_class': 2, 'target_class': 8},
+    # # # Label flipping attack with clean evaluation
+    # {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Clean', 'BATCH_SIZE': 64, 'source_class': 2, 'target_class': 8},
+    # # # Gradient ascent attack with poisoned evaluation
+    # {**base_config, 'attack_type': 'gradient_ascent', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
+    # # # Gradient ascent attack with clean evaluation
+    # {**base_config, 'attack_type': 'gradient_ascent', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
     
-    # Random to target attack with poisoned evaluation
-    {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': 9},
-    # Random to target attack with clean evaluation
-    {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': 9},
-    # Random to random attack with poisoned evaluation
-    {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
-    # Random to random attack with clean evaluation
-    {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
+    # # Random to target attack with poisoned evaluation
+    # {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': 9},
+    # # Random to target attack with clean evaluation
+    # {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': 9},
+    # # Random to random attack with poisoned evaluation
+    # {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Poisoned', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
+    # # Random to random attack with clean evaluation
+    # {**base_config, 'attack_type': 'label_flip', 'evaluation': 'Clean', 'BATCH_SIZE': 32, 'source_class': None, 'target_class': None},
 ]
 
 

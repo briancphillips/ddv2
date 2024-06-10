@@ -109,6 +109,7 @@ venv.bak/
 # mkdocs documentation
 /site
 
+/datasets
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -140,3 +141,5 @@ experiment_logs.csv
 # Ignore virtual environment folder
 venv/
 .VSCodeCounter/
+
+/knn_model.joblib
